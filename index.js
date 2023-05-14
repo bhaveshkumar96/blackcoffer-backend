@@ -1,11 +1,13 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors")
 const { connection } = require("./configs/config");
 const { dataRouter } = require("./routes/data.route");
 const app = express();
 
 app.use(express.json());
 app.use("/data",dataRouter)
+app.use(cors())
 app.get("/", (req, res) => {
   res.send("Home page");
 });
