@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json());
 app.use("/data",dataRouter)
-app.use(cors())
+app.use(cors({origin:"https://blackcoffer-backend-production-3ed6.up.railway.app/data"}))
 app.get("/", (req, res) => {
   res.send("Home page");
 });
