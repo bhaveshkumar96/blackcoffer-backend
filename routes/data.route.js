@@ -4,6 +4,7 @@ const { DataModel } = require("../model/data.model");
 const dataRouter = express.Router();
 
 dataRouter.get("/", async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
   try {
     let data = await DataModel.find();
     res.send(data);
